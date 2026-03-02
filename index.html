@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SS1 Bike Rentals | Best Rates in Tirupati | ₹600/Day</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #001F3F;
+            --orange: #FF851B;
+            --white: #ffffff;
+            --dark: #000b16;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Open Sans', sans-serif; color: #333; background-color: #fdfdfd; overflow-x: hidden; }
+        
+        /* Background Logo Pattern */
+        body::before {
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 100 100"><text x="10" y="50" font-family="Montserrat" font-weight="900" font-size="10" fill="%23FF851B" fill-opacity="0.04">SS1 BIKES</text></svg>');
+            z-index: -1; pointer-events: none;
+        }
+
+        /* Nav */
+        nav { background: var(--navy); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .logo { color: var(--white); font-family: 'Montserrat'; font-weight: 900; font-size: 1.8rem; letter-spacing: -1px; }
+        .logo span { color: var(--orange); }
+
+        /* Hero */
+        .hero {
+            height: 90vh; background: linear-gradient(rgba(0,31,63,0.8), rgba(0,31,63,0.8)), url('https://images.unsplash.com/photo-1444491741275-3747c53c99b4?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: var(--white); padding: 20px;
+        }
+        .hero h1 { font-family: 'Montserrat'; font-size: clamp(2rem, 8vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; max-width: 700px; }
+        .price-badge { background: var(--orange); padding: 15px 30px; border-radius: 50px; font-family: 'Montserrat'; font-weight: 900; font-size: 1.5rem; margin-bottom: 30px; box-shadow: 0 10px 20px rgba(255,133,27,0.3); animation: pulse 2s infinite; }
+
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        /* Sections */
+        section { padding: 80px 10%; text-align: center; }
+        .bg-grey { background-color: #f4f7f9; }
+        h2 { font-family: 'Montserrat'; font-size: 2.5rem; font-weight: 900; margin-bottom: 50px; position: relative; }
+        h2::after { content: ""; width: 60px; height: 5px; background: var(--orange); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
+
+        /* Booking Form */
+        .booking-card { background: var(--white); padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .input-group { display: flex; flex-direction: column; text-align: left; }
+        .input-group label { font-weight: 700; font-size: 0.8rem; margin-bottom: 8px; color: var(--navy); }
+        .input-group input, .input-group select { padding: 15px; border: 2px solid #eee; border-radius: 10px; font-family: inherit; }
+
+        /* Fleet */
+        .fleet-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .bike-card { background: var(--white); border-radius: 20px; padding: 30px; text-align: center; border: 1px solid #eee; transition: var(--transition); border-bottom: 5px solid var(--orange); }
+
+        /* Trust & Review Section */
+        .trust-badges { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; }
+        .badge { display: flex; flex-direction: column; align-items: center; font-weight: 700; color: var(--navy); }
+
+        /* Review Button Style */
+        .review-btn { background: #4285F4; color: white; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-family: 'Montserrat'; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); }
+        .review-btn:hover { background: #357abd; transform: translateY(-3px); }
+
+        /* Buttons */
+        .btn { background: var(--orange); color: var(--white); padding: 15px 35px; text-decoration: none; font-weight: bold; border-radius: 5px; border: none; cursor: pointer; font-family: 'Montserrat'; transition: var(--transition); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,133,27,0.4); }
+
+        /* Contact Floats */
+        .float-btn { position: fixed; right: 20px; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; font-size: 1.5rem; }
+        .float-wa { bottom: 100px; background: #25d366; }
+        .float-call { bottom: 30px; background: var(--orange); }
+
+        /* Footer */
+        footer { background: var(--dark); color: #888; padding: 60px 5% 30px; text-align: center; }
+        .dvm-credit { margin-top: 40px; padding-top: 20px; border-top: 1px solid #111; color: #fff; font-family: 'Montserrat'; font-weight: 700; letter-spacing: 2px; }
+        .dvm-credit span { color: var(--orange); }
+
+        @media (max-width: 768px) { section { padding: 60px 5%; } h1 { font-size: 2.2rem; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SS1<span>BIKES</span></div>
+        <a href="tel:7799699920" class="btn" style="padding: 10px 20px; font-size: 0.8rem;">CALL: 7799699920</a>
+    </nav>
+
+    <header class="hero">
+        <div class="price-badge">₹600 / 24 HRS</div>
+        <h1>SPIRIT OF TIRUPATI.<br>SPEED OF SS1.</h1>
+        <p>Premium Yamaha, Honda & Suzuki rentals. Visit us at Shop No. 8, Sandhya Theatre Complex, Near Tirupati Bus Stand.</p>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+            <a href="#book" class="btn">BOOK NOW</a>
+            <a href="#location" class="btn" style="background: white; color: var(--navy);">OUR SHOP</a>
+        </div>
+    </header>
+
+    <section id="book">
+        <h2>RESERVE YOUR RIDE</h2>
+        <div class="booking-card">
+            <div class="input-group">
+                <label>Vehicle Choice</label>
+                <select id="bikeType">
+                    <option>Honda Activa / Scooty</option>
+                    <option>Yamaha FZ / Sports</option>
+                    <option>Suzuki Access 125</option>
+                    <option>Honda Shine</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Pickup Date</label>
+                <input type="date" id="pickDate">
+            </div>
+            <div class="input-group">
+                <label>Your Name</label>
+                <input type="text" id="custName" placeholder="Enter Name">
+            </div>
+            <div style="display: flex; align-items: flex-end;">
+                <button onclick="sendWA()" class="btn" style="width: 100%; border-radius: 10px;">BOOK ON WHATSAPP</button>
+            </div>
+        </div>
+        
+        <div class="trust-badges">
+            <div class="badge"><span>🛡️</span> Sanitized Helmet</div>
+            <div class="badge"><span>📍</span> Near Bus Stand</div>
+            <div class="badge"><span>✅</span> Instant Pickup</div>
+        </div>
+    </section>
+
+    <section class="bg-grey">
+        <h2>YAMAHA | HONDA | SUZUKI</h2>
+        <div class="fleet-container">
+            <div class="bike-card">
+                <h3>HONDA</h3>
+                <p>Perfect for long temple visits and smooth city riding.</p>
+                <div style="margin-top: 15px; font-weight: 900; color: var(--orange);">₹600/DAY</div>
+            </div>
+            <div class="bike-card">
+                <h3>YAMAHA</h3>
+                <p>High performance and speed for the explorer in you.</p>
+                <div style="margin-top: 15px; font-weight: 900; color: var(--orange);">₹600/DAY</div>
+            </div>
+            <div class="bike-card">
+                <h3>SUZUKI</h3>
+                <p>Premium comfort with modern style for every traveler.</p>
+                <div style="margin-top: 15px; font-weight: 900; color: var(--orange);">₹600/DAY</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location">
+        <h2>LOCATE SHOP NO. 8</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; text-align: left;">
+            <div>
+                <h3 style="color: var(--navy); margin-bottom: 20px;">VISIT SS1 BIKE RENTALS</h3>
+                <p><strong>📍 Shop Address:</strong> Shop No. 8, Sandhya Theatre Complex, Near Bus Stand, Tirupati.</p>
+                <p><strong>🕒 Availability:</strong> 24/7 Support for Pilgrims</p>
+                <p><strong>📞 Contact:</strong> 7799699920</p>
+                <div style="margin-top: 30px; background: var(--navy); color: white; padding: 25px; border-radius: 15px;">
+                    <h4>Loved our ride?</h4>
+                    <p style="font-size: 0.9rem; margin: 10px 0 20px;">Help us grow by leaving a Google Review!</p>
+                    <a href="#" target="_blank" class="review-btn">⭐ REVIEW ON GOOGLE</a>
+                </div>
+            </div>
+            <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
+                <iframe src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE_HERE" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-grey">
+        <h2>RENTAL RULES</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: left; background: white; padding: 40px; border-radius: 20px;">
+            <p style="margin-bottom: 12px;">✅ <strong>Verification:</strong> Original DL & Aadhar copy mandatory.</p>
+            <p style="margin-bottom: 12px;">✅ <strong>Cycle:</strong> ₹600 covers exactly 24 hours.</p>
+            <p style="margin-bottom: 12px;">✅ <strong>Late Returns:</strong> ₹100 per hour delay charges apply.</p>
+            <p style="margin-bottom: 12px;">✅ <strong>Security:</strong> Free Helmet and Lock included.</p>
+            <p style="margin-bottom: 12px;">✅ <strong>Damage:</strong> Rider is 100% responsible for physical damage or fines.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo">SS1<span>BIKES</span></div>
+        <p>Shop No. 8, Sandhya Theatre Complex, Tirupati</p>
+        <p>© 2026 SS1 BIKE RENTALS. ALL RIGHTS RESERVED.</p>
+        <div class="dvm-credit">
+            WEBSITE CREATE BY <span>DVM CHOWDARY</span>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/917799699920" class="float-btn float-wa" target="_blank">💬</a>
+    <a href="tel:7799699920" class="float-btn float-call">📞</a>
+
+    <script>
+        function sendWA() {
+            let name = document.getElementById('custName').value;
+            let bike = document.getElementById('bikeType').value;
+            let date = document.getElementById('pickDate').value;
+            let text = `Hello SS1 Bikes! I want to book a ride.%0A%0A*Name:* ${name}%0A*Vehicle:* ${bike}%0A*Date:* ${date}%0A*Location:* Shop No. 8, Tirupati`;
+            window.open(`https://wa.me/917799699920?text=${text}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>
